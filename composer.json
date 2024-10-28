@@ -1,0 +1,10 @@
+{
+  "name": "mr.m/php-prac",
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "Framework\\": "src/Framework/",
+      "App\\": "src/App/"
+    }
+  }
+}
