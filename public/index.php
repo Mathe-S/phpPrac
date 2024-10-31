@@ -2,7 +2,8 @@
 
 declare(strict_types=1);
 
+include_once __DIR__ . "/../src/App/functions.php";
 
-$app = require __DIR__ . "/../src/App/bootstrap.php";
+$app = include_once __DIR__ . "/../src/App/bootstrap.php";
 
-$app->start();
+$app->run();
