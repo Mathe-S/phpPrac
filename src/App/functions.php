@@ -14,3 +14,11 @@ function deDanger(mixed $data)
 {
     return htmlspecialchars((string) $data);
 }
+
+
+function reditectTo(string $path)
+{
+    header("Location: {$path}");
+    http_response_code(302);
+    exit;
+}

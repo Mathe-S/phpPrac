@@ -13,6 +13,6 @@ class AboutController
 
     public function about()
     {
-        echo $this->view->render("about.php", ["title" => "Home"]);
+        echo $this->view->render("about.php");
     }
 }
