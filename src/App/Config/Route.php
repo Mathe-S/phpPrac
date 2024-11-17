@@ -24,4 +24,6 @@ function registerRoutes(App $app)
     $app->delete("/transaction/{transaction}", [TransactionController::class, "delete"])->addRouteMiddleware(AuthRequiredMiddleware::class);
     $app->get("/transaction/{transaction}/receipt", [ReceiptController::class, "uploadView"])->addRouteMiddleware(AuthRequiredMiddleware::class);
     $app->post("/transaction/{transaction}/receipt", [ReceiptController::class, "upload"])->addRouteMiddleware(AuthRequiredMiddleware::class);
+    $app->get("/transaction/{transaction}/receipt/{receipt}", [ReceiptController::class, "download"])->addRouteMiddleware(AuthRequiredMiddleware::class);
+    $app->delete("/transaction/{transaction}/receipt/{receipt}", [ReceiptController::class, "delete"])->addRouteMiddleware(AuthRequiredMiddleware::class);
 }
