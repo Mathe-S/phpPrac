@@ -16,7 +16,7 @@ function deDanger(mixed $data)
 }
 
 
-function reditectTo(string $path)
+function redirectTo(string $path)
 {
     header("Location: {$path}");
     http_response_code(302);

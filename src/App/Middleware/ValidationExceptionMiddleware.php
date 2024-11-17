@@ -25,7 +25,7 @@ class ValidationExceptionMiddleware implements MiddlewareInterface
             $_SESSION["oldFormData"] = $formatedFormDaata;
 
             $referer = $_SERVER["HTTP_REFERER"];
-            reditectTo($referer);
+            redirectTo($referer);
         }
     }
 }

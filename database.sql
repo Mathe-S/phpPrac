@@ -10,3 +10,25 @@ CREATE TABLE IF NOT EXISTS users (
     PRIMARY KEY (id),
     UNIQUE KEY email (email)
 );
+
+CREATE TABLE IF NOT EXISTS transactions (
+    id bigint(20) NOT NULL AUTO_INCREMENT,
+    description VARCHAR(255) NOT NULL,
+    amount decimal(10,2) NOT NULL,
+    date DATETIME NOT NULL,
+    created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    updated_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    user_id bigint(20) unsigned NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE IF NOT EXISTS receipts(
+  id bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  original_filename varchar(255) NOT NULL,
+  storage_filename varchar(255) NOT NULL,
+  media_type varchar(255) NOT NULL,
+  transaction_id bigint(20) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY(transaction_id) REFERENCES transactions (id) ON DELETE CASCADE
+);

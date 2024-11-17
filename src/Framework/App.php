@@ -22,6 +22,7 @@ class App
 
     public function run()
     {
+
         $path = $_SERVER["REQUEST_URI"];
         $method = $_SERVER["REQUEST_METHOD"];
 
@@ -38,6 +39,13 @@ class App
     public function post(string $path, array $controller): App
     {
         $this->router->add("POST", $path, $controller);
+
+        return $this;
+    }
+
+    public function delete(string $path, array $controller): App
+    {
+        $this->router->add("DELETE", $path, $controller);
 
         return $this;
     }

@@ -25,7 +25,7 @@ class AuthController
         $this->userService->isEmailTaken($_POST["email"]);
         $this->userService->createUser($_POST);
 
-        reditectTo("/");
+        redirectTo("/");
     }
 
     public function login()
@@ -34,7 +34,7 @@ class AuthController
 
         $this->userService->login($_POST);
 
-        reditectTo("/");
+        redirectTo("/");
     }
 
     public function loginView()
@@ -46,6 +46,6 @@ class AuthController
     {
         $this->userService->logout();
 
-        reditectTo("/login");
+        redirectTo("/login");
     }
 }
