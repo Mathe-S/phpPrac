@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use App\Framework\Http;
+
 function dd(mixed $val)
 {
     echo "<pre>";
@@ -19,6 +21,6 @@ function deDanger(mixed $data)
 function redirectTo(string $path)
 {
     header("Location: {$path}");
-    http_response_code(302);
+    http_response_code(Http::REDIRECT_STATUS_CODE);
     exit;
 }
